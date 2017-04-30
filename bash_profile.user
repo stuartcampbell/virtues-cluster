@@ -1,0 +1,22 @@
+# .bash_profile
+
+# Get the aliases and functions
+if [ -f ~/.bashrc ]; then
+        . ~/.bashrc
+fi
+
+# User specific environment and startup programs
+if [ `hostname | grep metis` ]; then
+   #Put Metis (Cray XK) stuff here
+   echo “Replace this with Metis Module Loads”
+elif [ `hostname | grep or-condo-` ]; then
+   # Load the general Virtues environment
+   module load env/cades-virtues
+else
+   #Put other CADES Systems or Cluster stuff here
+   echo “Replace this with other CADES info”
+fi
+
+PATH=$PATH:$HOME/bin
+
+export PATH
